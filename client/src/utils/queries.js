@@ -1,19 +1,22 @@
+// Importing necessary files
 import { gql } from '@apollo/client';
 
-export const QUERY_ME = gql`
-  {
-    me {
-      _id
-      username
-      email
-      savedBooks {
-        bookId
-        authors
-        image
-        description
-        title
-        link
-      }
+// Setting query for logged in user
+export const GET_ME = gql`
+    query me {
+        me {
+            _id
+            username
+            email
+            bookCount
+            savedBooks {
+                bookId
+                title
+                authors
+                description
+                image
+                link
+            }
+        }
     }
-  }
 `;
